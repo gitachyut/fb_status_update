@@ -38,5 +38,5 @@ app.post('/fb_status_update',(req,res)=>{
 })
 app.listen(PORT,()=>{
   console.log('app statred');
-  // exec(`open http://localhost:${PORT}/`);
+  exec(`open http://localhost:${PORT}/`);
 })
