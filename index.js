@@ -1,15 +1,16 @@
 const express = require('express');
 const fs = require('fs');
+const path = require('path');
 const request = require('request');
 const exec = require('child_process').exec;
 const app = express();
 const PORT = 9000;
 const env = require('node-env-file');
-env(__dirname + '/.env');
+env(path.join(__dirname , '.env'));
 
 var bodyParser = require('body-parser');
 app.use(bodyParser());
-app.use(express.static(__dirname+'/public'));
+app.use(express.static(path.join( __dirname , '/public' ));
 
 app.get('/',(req,res)=>{
   var access_token = process.env.access_token;
@@ -26,7 +27,7 @@ app.post('/fb_status_update',(req,res)=>{
   var url = 'https://graph.facebook.com/me/feed';
   var params = {
    access_token: access_token,
-   message: req.body.message,
+   message: req.body.message
   };
 
 
