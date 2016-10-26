@@ -10,7 +10,7 @@ env(path.join(__dirname , '.env'));
 
 var bodyParser = require('body-parser');
 app.use(bodyParser());
-app.use(express.static(path.join( __dirname , '/public' ));
+app.use(express.static(path.join( __dirname , '/public' )));
 
 app.get('/',(req,res)=>{
   var access_token = process.env.access_token;
