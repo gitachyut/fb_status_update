@@ -2,7 +2,7 @@
 <br>
 ## Facebook Status Update App Using Facebook Open Graph
 
-```git clone```<br>
+```git clone https://github.com/gitachyut/fb_status_update.git```<br>
 ```npm install```<br>
 
 Create ```.env``` file in the root directory and add ```access_token=YOUR_TOKEN```<br>
