@@ -21,12 +21,15 @@ app.get('/',(req,res)=>{
   res.render('index.ejs',{access_token});
 });
 app.post('/fb_status_update',(req,res)=>{
+
   const access_token = process.env.access_token;
   var url = 'https://graph.facebook.com/me/feed';
   var params = {
    access_token: access_token,
    message: req.body.message,
   };
+
+
   request.post({url: url, qs: params}, function(err, resp, body) {
      if (err) {
       console.error(err)
@@ -35,8 +38,10 @@ app.post('/fb_status_update',(req,res)=>{
      res.redirect('/');
   });
 
-})
+});
 app.listen(PORT,()=>{
   console.log('app statred');
-  exec(`open http://localhost:${PORT}/`);
-})
+  // exec(`open http://localhost:${PORT}/`);
+});
+
+module.exports = app;
